@@ -1,12 +1,12 @@
-# devcontainerテンプレート
+# Rust(actix-web)のサンプルリポジトリ
 
 ## 概要
 
-devcontainerテンプレートリポジトリ
+- Rustとフレームワークのactix-webを利用したバックエンドアプリケーションサンプルリポジトリ
 
 ## 目次
 
-- [devcontainerテンプレート](#devcontainerテンプレート)
+- [Rust(actix-web)のサンプルリポジトリ](#rustactix-webのサンプルリポジトリ)
   - [概要](#概要)
   - [目次](#目次)
   - [共通事項](#共通事項)
@@ -38,12 +38,32 @@ devcontainerテンプレートリポジトリ
 │   ├── README.make.md
 │   ├── README.scoop-package.md
 │   └── README.scoop.md
-├── infrastructure/
-│   └── service_name(compose.ymlのサービスごとのディレクトリ)/
+├── app/
+│   └── src/
+│       ├── api(ユースケース)/
+│       │   └── mod.rs
+│       ├── config(DB設定等)/
+│       │   └── mod.rs
+│       ├── externals(データベースへのクエリや外部API等)/
+│       │   └── mod.rs
+│       ├── handlers(インターフェイス)/
+│       │   └── mod.rs
+│       ├── models/
+│       │   └── mod.rs
+│       ├── routes(ルート設定)/
+│       │   └── mod.rs
+│       ├── utils(拡張処理等)/
+│       │   └── mod.rs
+│       ├── main.rs
+│       ├── .gitignore
+│       ├── Cargo.lock
+│       └── Cargo.toml
+├── infrastructure /
+│   └── rust/
 │       └── Dockerfile
-├── .dockerignore
-├── .env.example
-├── .gitignore
+├── dockerignore
+├── env.example
+├── gitignore
 ├── API.rest(REST Client)
 ├── compose.yml
 ├── Makefile
@@ -76,6 +96,11 @@ make down-rmi
 
 # 全体的な不要なリソースの完全削除するコマンド
 make down-all
+~~~
+
+~~~sh
+# Rustコンテナにログイン
+make login
 ~~~
 
 ## 参考リンク
