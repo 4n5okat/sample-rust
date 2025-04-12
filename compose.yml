@@ -1,0 +1,16 @@
+services:
+
+  # Rust App(actix-web)
+  rust-actix-web:
+    container_name: rust-actix-web-${CONTAINER_NAME_SUFFIX}
+    build:
+      context: .
+      dockerfile: infrastructure/rust/Dockerfile
+      target: development
+    volumes:
+      - ./app:/app
+    env_file:
+      - .env
+    tty: true
+    ports:
+      - ${CONTAINER_IP}:${ACTIXT_WEB_PORTS}:8080 # IPとPortを指定

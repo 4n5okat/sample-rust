@@ -1,38 +1,27 @@
 {
-    "name": "devcontainer-",
+    "name": "devcontainer-rust-app",
     "dockerComposeFile": [
         "../compose.yml"
     ],
     // "initializeCommand": "cd ../ & cp .env.example .env", // devcontainer実行前に実行したいコマンド
-    "service": "サービス名", // 起点となるコンテナのサービス名
-    "workspaceFolder": "カレントディレクトリパス",
+    "service": "rust-actix-web", // 起点となるコンテナのサービス名
+    "workspaceFolder": "/app",
     "customizations": {
       // カスタマイズ
       "vscode": {
         "extensions": [
-            // VSCode Basis
-            "akamud.vscode-theme-onedark", // Atom One Dark Theme (https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark)
-            "ms-ceintl.vscode-language-pack-ja", // Japanese Language Pack for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)
-            "irongeek.vscode-env", // ENV (https://marketplace.visualstudio.com/items?itemName=IronGeek.vscode-env)
-
-            // Markdown
-            "davidanson.vscode-markdownlint", // markdownlint (https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-            "yzhang.markdown-all-in-one", // Markdown All in One (https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
-
-            // Git
-            "donjayamanne.githistory", // Git History (https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
-            "eamodio.gitlens", // GitLens — Git supercharged (https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-            "mhutchie.git-graph", // Git Graph (https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-
-            // Docker
-            "ms-azuretools.vscode-docker", // Docker (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-
-            // Kubernetes
-            "ms-kubernetes-tools.vscode-kubernetes-tools", // Kubernetes (https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
-
-            // VSCode expansion
-            "ms-vsliveshare.vsliveshare" // Live Share (https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-
+            "akamud.vscode-theme-onedark",
+            "ms-ceintl.vscode-language-pack-ja",
+            "irongeek.vscode-env",
+            "davidanson.vscode-markdownlint",
+            "yzhang.markdown-all-in-one",
+            "donjayamanne.githistory",
+            "eamodio.gitlens",
+            "mhutchie.git-graph",
+            "ms-azuretools.vscode-docker",
+            "ms-kubernetes-tools.vscode-kubernetes-tools",
+            "ms-vsliveshare.vsliveshare",
+            "1YiB.rust-bundle"
         ],
         "settings": {
             "editor.fontSize": 16,
