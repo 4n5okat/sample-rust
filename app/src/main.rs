@@ -1,15 +1,5 @@
 use actix_web::{App, HttpServer};
 
-// アプリケーションアーキテクチャー
-mod routes;
-mod handlers;
-mod api;
-mod externals;
-
-mod models;
-mod config;
-mod utils;
-
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // HTTPサーバーを起動
